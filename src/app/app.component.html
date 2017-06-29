@@ -1,0 +1,15 @@
+<h1>
+  Welcome to JSConf {{title}}
+</h1>
+<ul>
+  <li *ngFor="let session of sessions"
+      [class.selected]="isSelected(session)"
+      (click)="select(session)">
+    <span class="room">{{session.room}}</span>
+    {{session.name}}
+  </li>
+</ul>
+<div *ngIf="selectedSession">
+      <session-detail [session]="selectedSession">
+      </session-detail>
+</div>
